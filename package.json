@@ -1,0 +1,27 @@
+{
+  "name": "chg-jd062122",
+  "version": "1.0.0",
+  "description": "Employee tracker challenge",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jessicamdittrich/CHG-JD062122.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jessicamdittrich/CHG-JD062122/issues"
+  },
+  "homepage": "https://github.com/jessicamdittrich/CHG-JD062122#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "inquirer": "^9.0.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3"
+  }
+}

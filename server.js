@@ -26,15 +26,15 @@ const db = mysql.createConnection(
 );
 
 // QUERY DATABASE
-db.query('SELECT * FROM students', function (err, results) {
+db.query('DESCRIBE department', function (err, results) {
   console.log(results);
 });
 
-// DEFAULT RESPONSE FOR ANY OTHER REQUEST (NOT FOUND)
-app.use((req, res) => {
-  res.status(404).end();
-});
+// // DEFAULT RESPONSE FOR ANY OTHER REQUEST (NOT FOUND)
+// app.use((req, res) => {
+//   res.status(404).end();
+// });
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// app.listen(PORT, () => {
+//   console.log(`Server running on port ${PORT}`);
+// });
