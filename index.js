@@ -85,7 +85,7 @@ function viewDepartments () {
 }
 
 function viewRoles () {
-  db.query('SELECT role.id AS Role_ID, role.title AS Role_Title, role.salary AS Role_Salary, role.department_id AS Role_Department_ID FROM role', (err, res) => {
+  db.query('SELECT role.id AS Role_ID, role.title AS Role_Title, role.salary AS Role_Salary, department.name AS Role_Department_ID FROM role INNER JOIN department ON role.department_id = department.id;', (err, res) => {
     if (err) {
       throw err;
     } else {
@@ -95,7 +95,7 @@ function viewRoles () {
 }
 
 function viewEmployees () {
-  db.query('SELECT employee.id AS Employee_ID, employee.first_name AS Employee_Name, employee.role_id AS Employee_Role, employee.manager_id AS Employee_Manager FROM employee', (err, res) => {
+  db.query('SELECT employee.id AS Employee_ID, employee.first_name AS Employee_Name, role.title AS Employee_Role, employee.manager_id AS Employee_Manager FROM employee INNER JOIN role ON employee.role_id = role.id', (err, res) => {
     if (err) {
       throw err;
     } else {
