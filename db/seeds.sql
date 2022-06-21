@@ -3,7 +3,7 @@ INSERT INTO department (name)
 
 INSERT INTO role (title, salary, department_id)
     VALUES ("Senior Project Manager", 200000, 1), 
-    ("Project Manager", 125000, 1), 
+    ("Project Management", 125000, 1), 
     ("Senior Developer", 175000, 2), 
     ("Junior Developer", 100000, 2), 
     ("Senior Graphic Designer", 150000, 3), 

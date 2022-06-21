@@ -44,7 +44,7 @@ startQuestions = () => {
       "Add a role",
       "Add an employee",
       "Update an employee role",
-      "No, that's it."
+      "Exit"
     ],
   }])
   .then((response) => {
@@ -81,6 +81,7 @@ function viewDepartments () {
     } else {
       console.table(res)
     }
+    startQuestions();
   });
 }
 
@@ -91,6 +92,7 @@ function viewRoles () {
     } else {
       console.table(res)
     }
+    startQuestions();
   });
 }
 
@@ -101,6 +103,7 @@ function viewEmployees () {
     } else {
       console.table(res)
     }
+    startQuestions();
   });
 }
 
