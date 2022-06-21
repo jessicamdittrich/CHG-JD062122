@@ -13,12 +13,12 @@ INSERT INTO role (title, salary, department_id)
     ("Receptionist", 60000, 4);
 
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
-    VALUES ("Leslie", "Knope", 1, 1),
-    ("April", "Ludgate", 2, null),
-    ("Ron", "Swanson", 3, 1),
-    ("Ann", "Perkins", 4, null),
-    ("Donna", "Meagle", 5, 1),
-    ("Ben", "Wyatt", 6, null),
-    ("Andy", "Dwyer", 7, 1),
-    ("Tom", "Haverford", 8, null),
-    ("Chris", "Traeger", 9, null)
+    VALUES ("Leslie", "Knope", 1, null),
+    ("April", "Ludgate", 2, 1),
+    ("Ron", "Swanson", 3, null),
+    ("Ann", "Perkins", 4, 3),
+    ("Donna", "Meagle", 5, null),
+    ("Ben", "Wyatt", 6, 5),
+    ("Andy", "Dwyer", 7, null),
+    ("Tom", "Haverford", 8, 7),
+    ("Chris", "Traeger", 9, 7)

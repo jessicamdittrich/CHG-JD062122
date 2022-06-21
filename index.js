@@ -59,7 +59,7 @@ startQuestions = () => {
         viewEmployees();
       break;
       case "Add a department":
-
+        addDepartment();
       break;
       case "Add a role":
 
@@ -68,7 +68,7 @@ startQuestions = () => {
 
       break;
       case "Update an employee role":
-
+        exitQuestions();
       break;
     }
   });
@@ -97,7 +97,7 @@ function viewRoles () {
 }
 
 function viewEmployees () {
-  db.query('SELECT employee.id AS Employee_ID, employee.first_name AS Employee_Name, role.title AS Employee_Role, employee.manager_id AS Employee_Manager FROM employee INNER JOIN role ON employee.role_id = role.id', (err, res) => {
+  db.query('SELECT employee.id AS Employee_ID, CONCAT(employee.first_name, " ", employee.last_name) AS Employee_Name, role.title AS Employee_Role, role.salary AS Employee_Salary, CONCAT(e2.first_name, " ", e2.last_name) AS Employee_Manager FROM employee INNER JOIN role ON employee.role_id = role.id LEFT JOIN employee as e2 ON e2.id = employee.manager_id', (err, res) => {
     if (err) {
       throw err;
     } else {
@@ -105,6 +105,24 @@ function viewEmployees () {
     }
     startQuestions();
   });
+}
+
+function addDepartment () {
+  inquirer.prompt([{
+    type: "input",
+    message: "What would you like to call the new department?",
+    name: "new_department"
+  }])
+  .then((input) => {
+    db.query('INSERT INTO department SET ?', {name: input.new_department}, (err,res) => {
+      if (err) throw err;
+      startQuestions();
+    });
+  });
+}
+
+function exitQuestions () {
+    process.exit();
 }
 
 startQuestions();
