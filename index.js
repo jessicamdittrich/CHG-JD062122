@@ -31,6 +31,7 @@ const db = mysql.createConnection(
   console.log(`Connected to the business_db database.`)
 );
 
+// INQUIRER QUESTIONS PROMPT
 startQuestions = () => {
   inquirer.prompt([{
     type: "list",
@@ -48,6 +49,7 @@ startQuestions = () => {
     ],
   }])
   .then((response) => {
+    // SWITCH TO FLOW THROUGH QUESTIONS BASED ON THE USERS SELECTION
     switch (response.initial_questions) {
       case "View all departments":
         viewDepartments();
@@ -73,6 +75,7 @@ startQuestions = () => {
   });
 };
 
+// VEIW DEPARTMENTS FUNCTION
 function viewDepartments () {
   db.query('SELECT department.id AS Department_ID, department.name AS Department_Name FROM department', (err, res) => {
     if (err) {
@@ -84,6 +87,7 @@ function viewDepartments () {
   });
 }
 
+// VIEW ROLES FUNCTION
 function viewRoles () {
   db.query('SELECT role.id AS Role_ID, role.title AS Role_Title, role.salary AS Role_Salary, department.name AS Role_Department_ID FROM role INNER JOIN department ON role.department_id = department.id;', (err, res) => {
     if (err) {
@@ -95,6 +99,7 @@ function viewRoles () {
   });
 }
 
+// VIEW EMPLOYEES FUNCTION
 function viewEmployees () {
   db.query('SELECT employee.id AS Employee_ID, CONCAT(employee.first_name, " ", employee.last_name) AS Employee_Name, role.title AS Employee_Role, role.salary AS Employee_Salary, CONCAT(e2.first_name, " ", e2.last_name) AS Employee_Manager FROM employee INNER JOIN role ON employee.role_id = role.id LEFT JOIN employee as e2 ON e2.id = employee.manager_id', (err, res) => {
     if (err) {
@@ -106,6 +111,7 @@ function viewEmployees () {
   });
 }
 
+// ADD DEPARTMENT FUNCTION
 function addDepartment () {
   inquirer.prompt([{
     type: "input",
@@ -120,4 +126,7 @@ function addDepartment () {
   });
 }
 
+// ADD ROLE FUNCTION
+
+// CALLING PROMPT TO START QUESTIONS
 startQuestions();
