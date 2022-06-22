@@ -68,8 +68,7 @@ startQuestions = () => {
 
       break;
       case "Update an employee role":
-        exitQuestions();
-      break;
+        process.exit();
     }
   });
 };
@@ -119,10 +118,6 @@ function addDepartment () {
       startQuestions();
     });
   });
-}
-
-function exitQuestions () {
-    process.exit();
 }
 
 startQuestions();

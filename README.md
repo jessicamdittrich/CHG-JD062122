@@ -8,11 +8,11 @@ My approach was to use what I learned during the in class activities to set up t
 
 ## End Result
 The end result is an unfinished application but I am happy that I was able to complete the majority of the requirements. In a time crunch, I was able to code in the users ability to view departments, roles, and employees, as well as add a department. 
-[Screenshot](images/screenshot.png)
+![Screenshot](images/screenshot.png)
 
 ## Reflection
 After completing what I could for this project, I did my usual self reflection. I really struggled with adding roles and employees to the point where I lost track and ran out of time. I will definitely tackle this on in the future to complete the application but for now, with the time given, I am happy with the outcome and what I was able to accomplish.
 
 ## Final Product
-![Video link]()
-![Repository link](https://github.com/jessicamdittrich/CHG-JD062122)
+[Video link](https://drive.google.com/file/d/14i68Xbw_BdqNG7h66YVejqugWneNqiBX/view)
+[Repository link](https://github.com/jessicamdittrich/CHG-JD062122)
